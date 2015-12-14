@@ -52,6 +52,6 @@ mostFrequentCount :: Ord a => [Set a] -> Int
 mostFrequentCount = maximum . Map.elems . getCounts
 
 winner :: [Reindeer] -> Int -> Int
-winner reindeers t = mostFrequentCount $ map (furthestSet reindeers) [1..(t+1)]
+winner reindeers t = mostFrequentCount $ map (furthestSet reindeers) [1..t]
 
 
