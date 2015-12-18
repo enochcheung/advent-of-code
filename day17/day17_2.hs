@@ -10,6 +10,7 @@ main = do
 
 
 -- returns a list s such that s!!i = list of all subsets of size i
+-- subsets "abc" == [[""],["a","b","c"],["ab","ac","bc"],["abc"],[],[],[],...]
 subsets :: [a] -> [[[a]]]
 subsets []      = [[]]:(repeat [])
 subsets (x:xs)  = zipWith (++) ([]:(map (map (x:)) subxs)) subxs
