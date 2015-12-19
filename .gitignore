@@ -1,2 +1,10 @@
+# ignore compiled binary files
+*
+!*.*
+
+*.o
+*.hi
+
 .DS_Store
+
 
