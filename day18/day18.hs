@@ -26,10 +26,12 @@ step :: Board -> Board
 step a = R.computeS $ R.traverse a id update
         where
             R.Z R.:. x R.:. y = R.extent a
-            update prev (R.Z R.:. i R.:. j) = case (prev (R.ix2 i j)) of
+            {-# INLINE update #-}
+            update prev ind@(R.Z R.:. i R.:. j) = case (prev ind) of
                                             True  -> (2 <= n && n <= 3)
                                             False -> (n==3)
                 where
+                    {-# INLINE inbound #-}
                     inbound i j = 0 <= i && i < x && 0 <= j && j < y
                     neighbors = [prev (R.ix2 (i+a) (j+b)) | a<-[-1..1], b<-[-1..1], (a/=0 || b/=0), inbound (i+a) (j+b)]
                     n = length $ filter id neighbors
