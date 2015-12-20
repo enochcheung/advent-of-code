@@ -1,6 +1,7 @@
 # ignore compiled binary files
 *
 !*.*
+!*/
 
 *.o
 *.hi
