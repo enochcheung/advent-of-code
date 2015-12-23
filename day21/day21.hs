@@ -8,7 +8,6 @@ type Armor = Int
 data ItemStat = ItemStat {cost :: Int, damage :: Damage, armor :: Armor} deriving (Eq, Ord, Show)
 data CharStat = CharStat {chp :: Hp, cdamage :: Damage, carmor :: Armor} deriving (Eq, Ord, Show)
 
-
 main :: IO ()
 main = do
         weapons <- readStatFile "weapons.txt"
