@@ -4,7 +4,7 @@ import Data.Vector (Vector, (!))
 
 data Reg = A | B deriving (Show)
 
-type Registers = (Int, Int)
+type Registers = (Integer, Integer)
 
 data Instruction = Hlf Reg | Tpl Reg | Inc Reg | Jmp Int | Jie Reg Int | Jio Reg Int
                 deriving (Show)
